@@ -1,7 +1,7 @@
 {
   "name": "promise-resolve-timeout",
   "description": "Create a Promise which will resolve with the provided value after a timeout.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

@@ -1,11 +1,15 @@
 
+/* IMPORT */
+
+import {FN, Result} from './types';
+
 /* PROMISE RESOLVE TIMEOUT */
 
-function resolveTimeout<T extends (( ...args: any ) => any)> ( timeout: number, fn: T ): Promise<ReturnType<T>>;
-function resolveTimeout<T> ( timeout: number, value: T ): Promise<T>;
-function resolveTimeout<T> ( timeout: number, value: T ) {
+function resolveTimeout<T extends FN> ( timeout: number, fn: T ): Promise<ReturnType<T>>;
+function resolveTimeout<T = undefined> ( timeout: number, value?: T ): Promise<T>;
+function resolveTimeout<T = undefined> ( timeout: number, value?: T ) {
 
-  return new Promise ( resolve => {
+  return new Promise<Result<T>> ( resolve => {
 
     setTimeout ( () => {
 
@@ -15,7 +19,7 @@ function resolveTimeout<T> ( timeout: number, value: T ) {
 
       } else {
 
-        resolve ( value );
+        resolve ( value as any ); //TSC
 
       }
 

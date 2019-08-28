@@ -8,6 +8,17 @@ import {default as resolveTimeout} from '../dist';
 
 describe ( 'Promise Resolve Timeout', it => {
 
+  it ( 'works with no values', async t => {
+
+    const start = Date.now (),
+          value = await resolveTimeout ( 1000 ),
+          elapsed = Date.now () - start;
+
+    t.true ( elapsed >= 1000 );
+    t.is ( value, undefined );
+
+  });
+
   it ( 'works with primitive values', async t => {
 
     const start = Date.now (),

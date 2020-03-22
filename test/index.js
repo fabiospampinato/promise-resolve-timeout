@@ -41,4 +41,14 @@ describe ( 'Promise Resolve Timeout', it => {
 
   });
 
+  it ( 'works with Infinite timeout', async t => {
+
+    resolveTimeout ( Infinity, () => t.fail () );
+
+    await resolveTimeout ( 1000 );
+
+    t.pass ();
+
+  });
+
 });

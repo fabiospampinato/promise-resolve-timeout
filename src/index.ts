@@ -11,6 +11,8 @@ function resolveTimeout<T = undefined> ( timeout: number, value?: T ) {
 
   return new Promise<Result<T>> ( resolve => {
 
+    if ( timeout === Infinity ) return;
+
     setTimeout ( () => {
 
       if ( typeof value === 'function' ) {

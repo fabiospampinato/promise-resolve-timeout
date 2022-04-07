@@ -1,10 +1,10 @@
 
-/* RESULT */
+/* MAIN */
 
-type FN = ( ...args: any ) => any;
+type FN = ( ...args: unknown[] ) => unknown;
 
 type Result<T> = T extends FN ? ReturnType<T> : T;
 
 /* EXPORT */
 
-export {FN, Result};
+export type {FN, Result};

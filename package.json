@@ -2,7 +2,7 @@
   "name": "promise-resolve-timeout",
   "repository": "github:fabiospampinato/promise-resolve-timeout",
   "description": "Create a Promise which will resolve with the provided value after a timeout.",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "type": "module",
   "main": "dist/index.js",
   "exports": "./dist/index.js",

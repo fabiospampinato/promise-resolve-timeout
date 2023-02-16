@@ -1,13 +1,12 @@
 
-/* IMPORT */
-
-import type {Result} from './types';
-
 /* MAIN */
 
-const resolveTimeout = <T> ( timeout: number, value?: T ): Promise<Result<T>> => {
+function resolveTimeout ( timeout: number ): Promise<undefined>;
+function resolveTimeout <T> ( timeout: number, value: () => T ): Promise<T>;
+function resolveTimeout <T> ( timeout: number, value: T ): Promise<T>;
+function resolveTimeout <T> ( timeout: number, value?: T ) {
 
-  return new Promise<Result<T>> ( resolve => {
+  return new Promise ( resolve => {
 
     if ( timeout === Infinity ) return;
 
@@ -19,7 +18,7 @@ const resolveTimeout = <T> ( timeout: number, value?: T ): Promise<Result<T>> =>
 
       } else {
 
-        resolve ( value as any ); //TSC
+        resolve ( value );
 
       }
 

@@ -5,7 +5,7 @@ Create a Promise which will resolve with the provided value after a timeout.
 ## Install
 
 ```sh
-npm install --save promise-resolve-timeout
+npm install promise-resolve-timeout
 ```
 
 ## Usage
